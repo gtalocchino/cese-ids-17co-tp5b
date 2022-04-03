@@ -25,23 +25,35 @@
 
 /*=====[Definitions of public global variables]==============================*/
 
+/**
+ * @brief Constante de una struct del tipo alumno_s que contiene los datos del alumno Esteban Volentini.
+ */
 static const struct alumno_s ESTEBAN_VOLENTINI = {
     .apellidos = "VOLENTINI",
     .nombres = "Esteban Daniel",
     .documento = "23.517.968",
 };
 
+/**
+ * @brief SConstante de una struct del tipo alumno_s que contiene los datos del alumno Gianfranco Talocchino.
+ */
 static const struct alumno_s GIANFRANCO_TALOCCHINO = {
     .apellidos = "TALOCCHINO",
     .nombres = "Gianfranco",
     .documento = "39.215.357",
 };
 
+/**
+ * @brief Constante array de punteros a structs de tipo alumno_s. Se inicializa con las constantes definidas previamente.
+ */
 const alumno_t ALUMNOS[] = {
     &ESTEBAN_VOLENTINI,
     &GIANFRANCO_TALOCCHINO,
 };
 
+/**
+ * @brief Constante que indica la cantidad de elementos en ALUMNOS.
+ */
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 
 /*=====[Definitions of private global variables]=============================*/

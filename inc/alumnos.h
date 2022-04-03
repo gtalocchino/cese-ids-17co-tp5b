@@ -29,18 +29,47 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
+/**
+ * @brief Struct que almacena los datos de un alumno
+ */ 
 typedef struct alumno_s {
-    char apellidos[30];
-    char nombres[30];
-    char documento[11];
+    char apellidos[30];  //!< Apellidos del alumno
+    char nombres[30];    //!< Nombres del alumno
+    char documento[11];  //!< Documento del alumno
 } const * alumno_t;
 
 /*=====[Definitions of public global variables]==============================*/
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+/**
+ * @brief Funcion que serializa los datos de un alumno en una cadena JSON.
+ * 
+ * Esta función se utiliza para convevertir una estructura de datos en memoria
+ * en una cadena de caracteres según el formato JSON. Para ello recibe un puntero
+ * a un buffer donde escribirá la cadena, el tamaño del buffer y un puntero a una Struct
+ * que contiene los datos del alumno.
+ *
+ * @param[out] cadena Puntero al buffer donde se escribirán los datos serializados de salida.
+ * @param[in] espacio Tamaño del buffer de salida en bytes.
+ * @param[in] alumno Puntero a un Struct que contiene los datos del alumno.
+ * @return true Si no se produce un error en la esctritura de cadena.
+ * @return false Si se produce un error en la esctritura de cadena.
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
+/**
+ * @brief Funcion que serializa los datos de multiples alumnos en una cadena JSON.
+ * 
+ * Esta función se utiliza para convevertir una estructura de datos en memoria
+ * en una cadena de caracteres según el formato JSON. Para ello recibe un puntero
+ * a un buffer donde escribira la cadena, el tamaño del buffer.
+ *
+ * @param[out] cadena Puntero al buffer donde se escribirán los datos serializados de salida.
+ * @param[in] espacio Tamaño del buffer de salida en bytes.
+ * @return true Si no se produce un error en la esctritura de cadena.
+ * @return false Si se produce un error en la esctritura de cadena.
+ */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
